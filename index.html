@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script src="./date.js"></script>
+  <style>
+  .hidden{
+    display:none;
+  }
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+  .side{
+    height: 100vh;
+    width:300px;
+    float:left;
+    border:1px solid black;
+    padding: 10px;
+  }
+  #main{
+    height: auto;
+    width:600px;
+    float:left;
+    margin-left: 10px;
+  }
+  .ui-widget-header{
+    background:blue;
+
+    color:white;
+  }
+ .ui-state-active{
+    background: #FF5B00;
+  }
+  </style>
+</head>
+<body>
+  <div id="master" class="clearfix">
+  <div class="side">
+    <div id="section">
+    <p><input type="radio" name="location" value="all"> Alla</p>
+    <p><input type="radio" name="location" value="central"> Centrala</p>
+    <p><input type="radio" name="location" value="local"> Lokala</p>
+ 
+    </div>
+
+    <div id="section">
+
+      <p><input type="checkbox" name="event[]" value="education">Utbildningar</p>
+      <p><input type="checkbox" name="event[]" value="event">Evenemang</p>
+     <p><input type="checkbox" name="event[]" value="activity">Aktiviteter</p>   
+    </div>
+
+    <div id="section">
+      <p>Date: <input type="text"  id="start_date_field"></input></p>
+        <div id="start_date" class="hidden"></div>
+        <div id="end_date" class="hidden"></div>
+        <p>EndDate: <input type="text" id="end_date_field"></p> 
+        <p><button id="submit" type="submit">Se resultat</button></p>    
+    </div>
+
+  </div>
+
+  <div id="main">
+  
+  </div>
+</div>
+</body>
+</html>
