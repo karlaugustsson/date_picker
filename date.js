@@ -1,6 +1,6 @@
 $(function() {
 	var fake_data = [{
-		name:"dinner with crocodile",
+		name:"dinner with food",
 		date:"06/06/2016",
 		location:"local",
 		event_cat: "education" , 
@@ -34,7 +34,7 @@ $(function() {
     var end_date = $( "#end_date" ).datepicker({onSelect: function(dateText, inst) {
     	
     	end_date_field.val(dateText);
-    	$(document).mouseleave();
+    	end_date.mouseleave();
 
     }
 });
@@ -65,19 +65,44 @@ $(function() {
 
     start_date.mouseleave(function(e) {
    
-	   	start_date.addClass("hidden");
+	   	//start_date.addClass("hidden");
  
     	
     });
     end_date.mouseleave(function(e) {
- 
+   
 	   	end_date.addClass("hidden");
  
     	
     });
+
+    $(".side").click(function(e){
+ 		var x = e.target
+ 		test = false;
+
+ 		while (x) { 
+ 		x = x.parentNode;
+ 		console.log(x);
+ 		if(!x){
+ 			break;
+ 		}
+    	if( x.id == "start_date" ){
+    		console.log("jepp");
+    		test = true;
+    		break;
+    	}
+    	
+		}
+		console.log(test);
+    	if(test == true){
+    		console.log("ahahahh");
+    	}
+    })
     start_date_field.change(function(){
   
     	start_date.datepicker( "setDate", this.value );
+    	start_date.mouseleave();
+
     })
     end_date_field.change(function(){
   
