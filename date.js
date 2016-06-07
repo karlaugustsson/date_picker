@@ -27,14 +27,14 @@ $(function() {
     var start_date  = $( "#start_date" ).datepicker( {onSelect: function(dateText, inst) {
     	
     	start_date_field.val(dateText);
-    	start_date.mouseleave();
+    	start_date.addClass("hidden");
 
     }
 });
     var end_date = $( "#end_date" ).datepicker({onSelect: function(dateText, inst) {
     	
     	end_date_field.val(dateText);
-    	end_date.mouseleave();
+    	end_date.addClass("hidden");
 
     }
 });
