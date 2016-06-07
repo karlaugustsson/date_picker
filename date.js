@@ -50,9 +50,11 @@ $(function() {
     	main_section.append("<p>plats:"+data.location+"</p>");
     	main_section.append("<p>event-type:"+data.event_cat+"</p>");
     })
-    start_date_field.click(function(e){;
+    start_date_field.click(function(e){
+      console.log(e);
     	start_date.removeClass("hidden");
     	end_date.addClass("hidden");
+      e.stopPropagation();
 
     });
 
@@ -60,44 +62,25 @@ $(function() {
     
     	end_date.removeClass("hidden");
     	start_date.addClass("hidden");
+      e.stopPropagation();
 
     });
-
-    start_date.mouseleave(function(e) {
-   
-	   	//start_date.addClass("hidden");
- 
-    	
-    });
-    end_date.mouseleave(function(e) {
-   
-	   	end_date.addClass("hidden");
- 
-    	
-    });
-
-    $(".side").click(function(e){
- 		var x = e.target
- 		test = false;
-
- 		while (x) { 
- 		x = x.parentNode;
- 		console.log(x);
- 		if(!x){
- 			break;
- 		}
-    	if( x.id == "start_date" ){
-    		console.log("jepp");
-    		test = true;
-    		break;
-    	}
-    	
-		}
-		console.log(test);
-    	if(test == true){
-    		console.log("ahahahh");
-    	}
+    start_date.click(function(e){
+      e.stopPropagation();
     })
+    end_date.click(function(e){
+      e.stopPropagation();
+    })
+
+
+
+$(document).click(function(){
+  end_date.addClass("hidden");
+  start_date.addClass("hidden");
+})
+
+
+
     start_date_field.change(function(){
   
     	start_date.datepicker( "setDate", this.value );
